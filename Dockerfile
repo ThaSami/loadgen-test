@@ -5,6 +5,7 @@ ARG RUNTIME_DEPS="libcrypto1.1 libssl1.1 libxml2-dev libxslt-dev curl jq ca-cert
 RUN apk add --no-cache git
 
 RUN git config --global core.autocrlf false
+ARG CACHE_BUST=1
 RUN git clone https://github.com/ThaSami/loadgen-test.git
 WORKDIR /loadgen-test/
 RUN apk update \

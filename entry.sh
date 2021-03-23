@@ -5,4 +5,4 @@ BRANCH_NAME=${BRANCH_NAME:-master}
 git pull --all
 git checkout ${BRANCH_NAME}
 
-python api.py 80
+python app.py 80
