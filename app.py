@@ -7,7 +7,7 @@ app = Flask(__name__)
 def hello_world():
     answer=0
     for i in range(0,10000):
-        answer+= random.random() * random.random()
+        answer+= (random.random() * random.random()) / (random.random()+1)
     return str(answer)
 
 if __name__ == '__main__':
