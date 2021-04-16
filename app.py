@@ -6,7 +6,8 @@ app = Flask(__name__)
 @app.route('/')
 def hello_world():
     answer=0
-    for i in range(0,10000):
+    loop = random.randint(20000,50000)
+    for i in range(0,loop):
         answer+= (random.random() * random.random()) / (random.random()+1)
     return str(answer)
 

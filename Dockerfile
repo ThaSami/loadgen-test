@@ -8,6 +8,7 @@ RUN git config --global core.autocrlf false
 ARG CACHE_BUST=1
 RUN git clone https://github.com/ThaSami/loadgen-test.git
 WORKDIR /loadgen-test/
+COPY requirements.txt .
 RUN apk update \
  && apk add --no-cache --virtual .build-deps ${BUILD_DEPS} \
  && apk add --no-cache ${RUNTIME_DEPS} \
@@ -19,7 +20,7 @@ RUN apk update \
         -exec rm -rf '{}' \+
 
 
-COPY entry.sh /
-RUN chmod +x /entry.sh
+COPY entry.sh .
+RUN chmod +x ./entry.sh
 
-ENTRYPOINT ["/entry.sh"]
+ENTRYPOINT ["./entry.sh"]
