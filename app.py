@@ -1,7 +1,10 @@
 from flask import Flask
 import random
 import sys
+from prometheus_flask_exporter.multiprocess import GunicornPrometheusMetrics
+
 app = Flask(__name__)
+metrics = GunicornPrometheusMetrics(app)
 
 @app.route('/')
 def hello_world():

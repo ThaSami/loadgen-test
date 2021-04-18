@@ -22,5 +22,6 @@ RUN apk update \
 
 COPY entry.sh .
 RUN chmod +x ./entry.sh
+ENV METRICS_PORT 9200
 
 ENTRYPOINT ["./entry.sh"]
