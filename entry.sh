@@ -2,6 +2,7 @@
 
 BRANCH_NAME=${BRANCH_NAME:-master}
 
+git reset --hard HEAD
 git pull --all
 git checkout ${BRANCH_NAME}
 
